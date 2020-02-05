@@ -1,0 +1,196 @@
+﻿{%extends 'base.html'%}
+
+{%block head%} {%endblock%}
+
+{%block body%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+            <form action="/" method="post">
+                <div class="form-group row">
+                    <label for="creditscroe" class="col-sm-2 col-form-label">Credit Score</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="creditscore" name="creditscore">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="balance" class="col-sm-2 col-form-label">Balance</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="balance" name="balance">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="salary" class="col-sm-2 col-form-label">Estimated Salary</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="salary" name="salary">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="age" class="col-sm-2 col-form-label">Age</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="age" name="age">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="age" class="col-sm-2 col-form-label">Tenure</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="tenure" name="tenure">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="age" class="col-sm-2 col-form-label"># of Products</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="products" name="products">
+                    </div>
+                </div>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                        <div class="col-sm-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                <label class="form-check-label" for="gender_m">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                                <label class="form-check-label" for="gender_f">Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Has Credit Card?</legend>
+                        <div class="col-sm-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="crdit" id="crd_y" value="1">
+                                <label class="form-check-label" for="crd_y">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="crdit" id="crd_n" value="0">
+                                <label class="form-check-label" for="crd_n">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Is Active Member?</legend>
+                        <div class="col-sm-4">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="active" id="act_y" value="1">
+                                <label class="form-check-label" for="act_y">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="active" id="act_n" value="0">
+                                <label class="form-check-label" for="act_n">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <label for="inputState" class="col-sm-2 col-form-label">Province</label>
+                    <div class="col-sm-4">
+                        <select id="inputState" class="form-control" name="state">
+                            <option selected>Choose...</option>
+                            <option>Alberta</option>
+                            <option>British Columbia</option>
+                            <option>Manitoba</option>
+                            <option>New Brunswick</option>
+                            <option>Nova Scotia</option>
+                            <option>Nunavut</option>
+                            <option>Ontario</option>
+                            <option>Prince Edward Island</option>
+                            <option>Quebec</option>
+                            <option>Saskatchewan</option>
+                            <option>Yukon</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm-5">
+            {% if inputs|length > 1 %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Inputs</th>
+                        <th scope="col"></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Estimated Salary</th>
+                        
+                        <td>{{inputs['salary']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Is Active Member</th>
+                        
+                        <td>{{inputs['active']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Has Credit Card</th>
+                        
+                        <td>{{inputs['crdit']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row"># of Products</th>
+                        
+                        <td>{{inputs['products']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Balance</th>
+                        
+                        <td>{{inputs['balance']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Tenure</th>
+                        
+                        <td>{{inputs['tenure']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Age</th>
+                        
+                        <td>{{inputs['age']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Gender</th>
+                        
+                        <td>{{inputs['gender']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Geography</th>
+                        
+                        <td>{{inputs['state']}}</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Credit Score</th>
+                        <td>{{inputs['creditscore']}}</td>
+                    </tr>
+                                        
+                </tbody>
+            </table>
+            <h3> Output: </h3>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{%endblock%}

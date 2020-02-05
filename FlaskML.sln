@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FlaskML", "FlaskML\FlaskML.pyproj", "{47E40C36-B00E-4DF9-9F51-B8EE040E5178}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47E40C36-B00E-4DF9-9F51-B8EE040E5178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E40C36-B00E-4DF9-9F51-B8EE040E5178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E40C36-B00E-4DF9-9F51-B8EE040E5178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E40C36-B00E-4DF9-9F51-B8EE040E5178}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {999C21AE-579F-4024-9344-ABB5BF1DB656}
+	EndGlobalSection
+EndGlobal
